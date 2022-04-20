@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="docstyles.css">
+<nav id="navbar">
+    <header> Python Documentation</header>
+    <ul>
+        <li> <a href="#introduction" class="nav-link"> Introduction</a></li>
+        <li> <a href="#python_as_a_calculator" class="nav-link"> Python as a Calculator </a></li>
+        <li> <a href="#first_steps_towards_programming" class="nav-link"> First Steps Towards Programming</a></li>
+        <li> <a href="#more_control_flow_tools" class="nav-link"> More Control Flow Tools </a></li>
+        <li> <a href="#data_structures" class="nav-link">Data Structures </a> </li>
+    </ul>
+</nav>
+</head>
+<body>
+<main id="main-doc">
+    <section id="introduction" class="main-section">
+    <header> Introduction</header>
+    <p> 
+Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Pythons elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>    
+<p>The Python interpreter and the extensive standard library are freely available in source or binary form for all major platforms from the Python web site, https://www.python.org/, and may be freely distributed. The same site also contains distributions of and pointers to many free third party Python modules, programs and tools, and additional documentation.</p>
+<p>The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.</p>
+<p>This tutorial introduces the reader informally to the basic concepts and features of the Python language and system. It helps to have a Python interpreter handy for hands-on experience, but all examples are self-contained, so the tutorial can be read off-line as well.</p>
+<p>In the following examples, input and output are distinguished by the presence or absence of prompts (>>> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.</p>
+<p>You can toggle the display of prompts and output by clicking on >>> in the upper-right corner of an example box. If you hide the prompts and output for an example, then you can easily copy and paste the input lines into your interpreter.</p>
+<p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
+    </section> 
+
+    <section id="python_as_a_calculator" class="main-section">
+        <header> Python as a calculator</header>
+        <h3> Numbers</h3>
+        <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. 
+            Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. 
+            For example:
+        </p>
+        <div class="code">
+            <code>
+            >>> 2 + 2<br>
+            4<br>
+            >>> 50 - 5*6<br>
+            20<br>
+            >>> (50 - 5*6) / 4<br>
+            5.0<br>
+            >>> 8 / 5  # division always returns a floating point number<br>
+            1.6<br>
+            </code>
+        </div>
+        <h3> Strings</h3>
+        <p> Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result 2. \ can be used to escape quotes:</p>
+        <div class="code">
+            <code>
+        >>> 'spam eggs'  # single quotes <br>
+        'spam eggs'<br>
+        >>> 'doesn\'t'  # use \' to escape the single quote...<br>
+        "doesn't"<br>
+        >>> "doesn't"  # ...or use double quotes instead<br>
+        "doesn't"<br>
+        >>> '"Yes," they said.'<br>
+        '"Yes," they said.'<br>
+        >>> "\"Yes,\" they said."<br>
+        '"Yes," they said.'<br>
+        >>> '"Isn\'t," they said.'<br>
+        '"Isn\'t," they said.'<br>
+            </code>
+        </div>
+        <h3> Lists </h3>
+        <p> Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.</p>
+        <div class="code">
+            <code>
+        >>> squares = [1, 4, 9, 16, 25]<br>
+        >>> squares <br>
+        [1, 4, 9, 16, 25]        
+        </code>
+        </div>
+    </section>
+
+    <section id="first_steps_towards_programming" class="main-section">
+        <header> First Steps Towards Programming </header>
+        <p> Of course, we can use Python for more complicated tasks than adding two and two together. For instance, we can write an initial sub-sequence of the Fibonacci series as follows: </p>
+        <div class="code">
+            <code>
+        >>> # Fibonacci series:<br>
+        ... # the sum of two elements defines the next<br>
+        ... a, b = 0, 1<br>
+        >>> while a < 10:<br>
+        ...     print(a)<br>
+        ...     a, b = b, a+b<br>
+        ...<br>
+        0<br>
+        1<br>
+        1<br>
+        2<br>
+        3<br>
+        5<br>
+        8<br>   
+        </code>
+        </div>
+        <p> This example introduces several new features.</p>
+        <ul>
+            <li> The first line contains a multiple assignment: the variables a and b simultaneously get the new values 0 and 1. On the last line this is used again, demonstrating that the expressions on the right-hand side are all evaluated first before any of the assignments take place. The right-hand side expressions are evaluated from the left to the right. </li><br>
+            <li> The while loop executes as long as the condition (here: a < 10) remains true. In Python, like in C, any non-zero integer value is true; zero is false. The condition may also be a string or list value, in fact any sequence; anything with a non-zero length is true, empty sequences are false. The test used in the example is a simple comparison. The standard comparison operators are written the same as in C: < (less than), > (greater than), == (equal to), <= (less than or equal to), >= (greater than or equal to) and != (not equal to). </li><br>
+            <li> The body of the loop is indented: indentation is Python’s way of grouping statements. At the interactive prompt, you have to type a tab or space(s) for each indented line. In practice you will prepare more complicated input for Python with a text editor; all decent text editors have an auto-indent facility. When a compound statement is entered interactively, it must be followed by a blank line to indicate completion (since the parser cannot guess when you have typed the last line). Note that each line within a basic block must be indented by the same amount.</li><br>
+            <li> The print() function writes the value of the argument(s) it is given. It differs from just writing the expression you want to write (as we did earlier in the calculator examples) in the way it handles multiple arguments, floating point quantities, and strings. Strings are printed without quotes, and a space is inserted between items, so you can format things nicely, like this: </li><br>
+        </ul>
+        </section>
+
+    <section id="more_control_flow_tools" class="main-section">
+        <header> More Control Flow Tools</header>
+        <p> Besides the while statement just introduced, Python uses the usual flow control statements known from other languages, with some twists.</p>
+        <h3> if Statements </h3>
+        <p> Perhaps the most well-known statement type is the if statement. For example: </p>
+        <div class="code">
+            <code>
+>>> x = int(input("Please enter an integer: "))
+Please enter an integer: 42
+>>> if x < 0:
+...     x = 0
+...     print('Negative changed to zero')
+... elif x == 0:
+...     print('Zero')
+... elif x == 1:
+...     print('Single')
+... else:
+...     print('More')
+...            
+        </code>
+        </div>
+        <p> There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’ is short for ‘else if’, and is useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages. </p>
+        <p> If you’re comparing the same value to several constants, or checking for specific types or attributes, you may also find the match statement useful. For more details see match Statements.</p>
+        <h3> for Statements </h3>
+        <p> The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended): </p>
+        <div class="code">
+            <code>
+>>> # Measure some strings:
+... words = ['cat', 'window', 'defenestrate']
+>>> for w in words:
+...     print(w, len(w))
+...
+cat 3
+window 6
+defenestrate 12 
+        </code>
+        </div>
+    </section>
+    <section id="data_structures" class="main-section">
+        <header> Data Structures </header>
+        <p> The list data type has some more methods. Here are some of the methods of list objects:</p>
+        <ul>
+            <li> list.append(x)</li>
+            <li> list.extend(iterable)</li>
+            <li> list.insert(i,x)</li>
+        </ul>
+    </section>
+
+    </section>
+          
+</main>
+
+</body>
+</html>

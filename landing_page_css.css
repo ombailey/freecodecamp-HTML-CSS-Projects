@@ -1,0 +1,120 @@
+#header-img { 
+    height: 150px;
+}
+
+#content {
+    margin-top: 150px;
+}
+
+#video {
+    margin-top: 20px; 
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#form{
+    text-align: center;
+}
+
+
+#submit {
+    background-color: rgba(0,60,230,.9);
+    color: white;
+    margin: 10px;
+}
+
+#email {
+    width: 200px;
+}
+
+.featureslogos {
+    width:125px; 
+    height: auto;
+    display: flex; 
+    justify-content: center; 
+    padding-left: 200px; 
+    flex-direction:column;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body li {
+    list-style: none; 
+    padding: 10px;
+}
+
+body ul {
+    display: flex; 
+    text-align: right;
+}
+
+
+#features {
+    margin: 50px; 
+    justify-content: center; 
+    padding-left:350px;
+}
+
+.features {
+    padding-right:300px; 
+    margin-top: -90px;
+}
+
+#nav-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    background-color: #fff;
+}
+#nav-bar a{
+    display: block;
+    text-decoration: none;
+    color:black;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0px 10px;
+    text-transform: uppercase;
+}
+
+hr {
+    width: 600px;
+}
+
+footer {
+    margin-top: 40px; 
+    text-align: right;
+}
+
+#nav-bar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    align-items: center;
+}
+
+#nav-bar a:hover{
+    color: dodgerblue;
+}
+
+@media (max-width: 600px) {
+header {flex-wrap: wrap;}}
+body{padding-top: 200px;}
+#nav-bar {
+    text-align: center; 
+    float:right; 
+    position: fixed;
+    top:0px;
+    width:100%;
+    height: 300px
+}
